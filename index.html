@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>ASCII-art</title>
+</head>
+
+<body>
+
+    <div class="block-main">
+        <h6>ASCII-art picture generator</h6>
+        <h1>Upload your picture</h1>
+        <div class="input-block">
+            <div class="input-row text-size input-block">
+                <span>Font size:</span>
+                <input type="number" step="1" value="12" min="3" max="36" maxlength="2">
+            </div>
+            <div class="input-row text-list input-block">
+                <span>Text list:</span>
+                <input type="text" maxlength="18" value="89O0#BHSW">
+            </div>
+            <div class="input-col input-block">
+                <div class="input-row color-pick">
+                    <span>Bg color:</span>
+                    <input type="color" value="#000000">
+                    <span class="reverse-button" onclick="reverseColor()">Reverse</span>
+                </div>
+                <div class="auto-bg">
+                    <input type="checkbox" onchange="autoBgWarn()">
+                    <span>Auto</span>
+                    <span id="warning"></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <input type="file" id="upload">
+            <div class="start-button" onclick="createArt()">Start</div>
+        </div>
+        <div class="preview-block">
+            <div class="source-image view" id="source-block">
+                <img id="img-source">
+            </div>
+            <div class="result-image view" id="result-block">
+                <canvas id="canvas" height="500" width="500"></canvas>
+                <img src="" id="result-image">
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="scrollSync.js"></script>
+</body>
+
+</html>
